@@ -6,6 +6,8 @@ import java.util.Date;
 
 public class Invoice {
     private double hoursWorked;
+
+    private double pricePerHour;
     private ArrayList<Material> materials;
 
     private Date dateTime;
@@ -15,8 +17,9 @@ public class Invoice {
         materials = new ArrayList<>();
     }
 
-    public Invoice(double hoursWorked, ArrayList<Material> materials) {
+    public Invoice(double hoursWorked, double pricePerHour, ArrayList<Material> materials) {
         this.hoursWorked = hoursWorked;
+        this.pricePerHour = pricePerHour;
         this.materials = materials;
         dateTime = new Date(System.currentTimeMillis());
     }
@@ -27,6 +30,14 @@ public class Invoice {
 
     public void setHoursWorked(double hoursWorked) {
         this.hoursWorked = hoursWorked;
+    }
+
+    public double getPricePerHour() {
+        return pricePerHour;
+    }
+
+    public void setPricePerHour(double pricePerHour) {
+        this.pricePerHour = pricePerHour;
     }
 
     public ArrayList<Material> getMaterials() {
