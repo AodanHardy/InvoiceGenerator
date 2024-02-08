@@ -12,6 +12,13 @@ public class Invoice {
 
     public Invoice() {
         dateTime = new Date(System.currentTimeMillis());
+        materials = new ArrayList<>();
+    }
+
+    public Invoice(double hoursWorked, ArrayList<Material> materials) {
+        this.hoursWorked = hoursWorked;
+        this.materials = materials;
+        dateTime = new Date(System.currentTimeMillis());
     }
 
     public double getHoursWorked() {
@@ -29,12 +36,15 @@ public class Invoice {
     public void setMaterials(ArrayList<Material> materials) {
         this.materials = materials;
     }
+    public void addToMaterials(Material material){
+        this.materials.add(material);
+    }
 
-    public DateTimeAtCreation getDateTime() {
+    public Date getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(DateTimeAtCreation dateTime) {
+    public void setDateTime(Date dateTime) {
         this.dateTime = dateTime;
     }
 }
